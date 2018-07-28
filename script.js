@@ -42,24 +42,8 @@ function Contact (name, email, phone, relation) {
     this.relation =relation;
 }
 
-// // initializing one Contact
-// let John = new Contact("John", "email", "7779311", "friend");
-
-// //and adding that one contact to the list
-// addressBook.list.push(John);
-
-
-
-
-
-/* * * * * * * * *       test area      * * * * * * * */
-
-
-
 //select the contacts div
 let domContacts = document.querySelector("#contacts");
-
-
 
 
 // global let
@@ -77,10 +61,22 @@ function refreshList() {
                     <li>Email: ${addressBook.list[i].email}</li>
                     <li>Phone: ${addressBook.list[i].phone}</li>
                     <li>Relation: ${addressBook.list[i].relation}</li>
-                    <button id="x${[i]}">x</button>
+                    <button id="x${[i]}" onclick="remParent(this)"></button>
                 </ul>`;
 
     }
 
     document.querySelector("#contacts").innerHTML = html;
 }
+
+// testing area
+function remParent(el) {
+    let index = (el.getAttribute("id").slice(-1)); // gets id#
+    el.parentNode.remove(); // removes ul from DOM
+    addressBook.list.splice(el, 1); // removes ul from array
+
+}
+
+
+
+
