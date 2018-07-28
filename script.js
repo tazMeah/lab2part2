@@ -19,11 +19,13 @@ function AddressBook () {
         this.list.push(new Contact(name, email, phone, select));
 
         refreshList();
-
-
-
         
-        
+    }
+    this.deleteAt = function (el) {
+        let index = (el.getAttribute("id").slice(-1)); // gets id#
+        el.parentNode.remove(); // removes ul from DOM
+        addressBook.list.splice(el, 1); // removes ul from array
+    
     }
 }
 
@@ -61,7 +63,7 @@ function refreshList() {
                     <li>Email: ${addressBook.list[i].email}</li>
                     <li>Phone: ${addressBook.list[i].phone}</li>
                     <li>Relation: ${addressBook.list[i].relation}</li>
-                    <button id="x${[i]}" onclick="remParent(this)"></button>
+                    <button id="x${[i]}" onclick="addressBook.deleteAt(this)"></button>
                 </ul>`;
 
     }
@@ -69,13 +71,6 @@ function refreshList() {
     document.querySelector("#contacts").innerHTML = html;
 }
 
-// testing area
-function remParent(el) {
-    let index = (el.getAttribute("id").slice(-1)); // gets id#
-    el.parentNode.remove(); // removes ul from DOM
-    addressBook.list.splice(el, 1); // removes ul from array
-
-}
 
 
 
