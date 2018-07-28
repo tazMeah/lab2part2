@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lab2Part2</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+    <div id="container">
+        <form action="" method="">
+            <h1>My Contacts</h1>
+            <input type="text" placeholder="Name" id="name" required/>
+            <input type="email" placeholder="Email" id="email" />
+            <input type="text" placeholder="Phone" id="phone" />
+            <select id="select" >
+                <option  value="" selected disabled>Relation</option>
+                <option value="family">Family</option>
+                <option value="friend">Friend</option>
+                <option value="foe">Foe</option>
+            </select>
+            <button type="button"  onclick="javascript:void(0); addressBook.add()">Add</button>
+        </form>
+    </div>
+
+    <div id="contacts">
+        <ul class="contacts">
+            <li>Name: First Last</li>
+            <li>email: email@email.com</li>
+            <li>phone: 123-456-7890</li>
+            <li>relation: Family</li>
+            <button>x</button>
+        </ul>
+
+        <ul class="contacts">
+            <li>Name: First Last</li>
+            <li>email: email@email.com</li>
+            <li>phone: 123-456-7890</li>
+            <li>relation: Family</li>
+            <button>x</button>
+        </ul>
+
+        <ul class="contacts">
+            <li>Name: First Last</li>
+            <li>email: email@email.com</li>
+            <li>phone: 123-456-7890</li>
+            <li>relation: Family</li>
+            <button>x</button>
+        </ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

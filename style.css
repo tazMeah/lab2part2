@@ -1,0 +1,108 @@
+body {
+    background: url("https://lms.grandcircus.co/pluginfile.php/4450/mod_label/intro/addressbg.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    font-family: Helvetica;
+
+}
+
+#container {
+    
+    max-width: 500px;
+    /*height: 400px;*/
+    background: rgba(175,175,175, .7);
+    margin: 0 auto;
+    border-radius: 7px;
+    padding: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    
+}
+h1 {
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+input, select, button {
+    
+    padding: 7px;
+    margin: 10px 0;
+    border-radius: 5px;
+    height: 25px;
+    font-size: 85%; 
+    border: none;
+}
+
+select {
+    height: 39px;
+}
+
+button {
+    height: 35px;
+    cursor: pointer;
+
+}
+
+button:hover {
+    background: #6B4D3A;
+    color: #E3D9D9;
+}
+
+button:focus {
+    outline: none;
+}
+
+/* contact list */
+
+div#contacts {
+    max-width: 800px;
+    /*background: beige;*/
+    margin: 45px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 20px;
+}
+
+ul.contacts {
+    list-style-type: none;
+    background: rgba(175,175,175, .7);
+    padding: 15px;
+    margin: 0;
+    border-radius: 3px;
+    position: relative;
+}
+
+.contacts button {
+    position: absolute;
+    background: white; /* temporary fix */
+    border-radius: 50%;
+    border: 1px solid red;
+    color: red;
+    height: 20px;
+    width: 20px;
+    padding: 0;
+    bottom: 0;
+    right: 0;
+
+}
+
+/* bonus css */
+li {
+    background: white;
+    padding: 7px;
+}
+
+li:first-child {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+li:last-child {
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
