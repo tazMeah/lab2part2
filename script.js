@@ -6,42 +6,27 @@ function AddressBook () {
     // array to hold the contacts
     this.list = [];
 
+    // global let
+    let html;
 
+    // clears current global, creates html based on current array of objects
+    this.display = () => {
+        html= "";
 
+        for (let i =0; i < addressBook.list.length; i++) {
+            html += `<ul class="contacts" id="contact${[i]}">
+                        <li>Name: ${addressBook.list[i].name}</li>
+                        <li>Email: ${addressBook.list[i].email}</li>
+                        <li>Phone: ${addressBook.list[i].phone}</li>
+                        <li>Relation: ${addressBook.list[i].relation}</li>         
+                        <button id="x${[i]}" onclick="addressBook.deleteAt(this)"></button>
+                        <button id="w${[i]}" onclick="addressBook.edit(this)"></button>  
+                    </ul>`;
 
-// global let
-let html;
+        }
 
-
-// clears current global, creates html based on current array of objects
-this.display = () => {
-    html= "";
-
-
-    for (let i =0; i < addressBook.list.length; i++) {
-        html += `<ul class="contacts" id="contact${[i]}">
-                    <li>Name: ${addressBook.list[i].name}</li>
-                    <li>Email: ${addressBook.list[i].email}</li>
-                    <li>Phone: ${addressBook.list[i].phone}</li>
-                    <li>Relation: ${addressBook.list[i].relation}</li>         
-                    <button id="x${[i]}" onclick="addressBook.deleteAt(this)"></button>
-                    <button id="w${[i]}" onclick="addressBook.edit(this)"></button>
-                    
-
-                </ul>`;
-
+        document.querySelector("#contacts").innerHTML = html;
     }
-
-    document.querySelector("#contacts").innerHTML = html;
-}
-
-
-
-
-
-
-
-
 
     // function to add to the array
     this.add = function () {
@@ -59,19 +44,15 @@ this.display = () => {
         
     }
     this.deleteAt = function (el) {
-        let index = (el.getAttribute("id").slice(-1)); // gets id#
+        let index = (el.getAttribute("id").slice(1)); // gets id#
         el.parentNode.remove(); // removes ul from DOM
-        addressBook.list.splice(el, 1); // removes ul from array
+        addressBook.list.splice(index, 1); // removes ul from array
     
     }
 }
 
-
 // initializing the AddressBook object
 const addressBook = new AddressBook();
-
-
-
 
 // constructor for Contacts
 function Contact (name, email, phone, relation) {
@@ -85,28 +66,6 @@ function Contact (name, email, phone, relation) {
 let domContacts = document.querySelector("#contacts");
 
 
-// // global let
-// let html;
-
-
-// // clears current global, creates html based on current array of objects
-// function refreshList() {
-//     html= "";
-
-
-//     for (let i =0; i < addressBook.list.length; i++) {
-//         html += `<ul class="contacts" id="contact${[i]}">
-//                     <li>Name: ${addressBook.list[i].name}</li>
-//                     <li>Email: ${addressBook.list[i].email}</li>
-//                     <li>Phone: ${addressBook.list[i].phone}</li>
-//                     <li>Relation: ${addressBook.list[i].relation}</li>
-//                     <button id="x${[i]}" onclick="addressBook.deleteAt(this)"></button>
-//                 </ul>`;
-
-//     }
-
-//     document.querySelector("#contacts").innerHTML = html;
-// }
 
 
 
