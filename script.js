@@ -13,7 +13,7 @@ function AddressBook () {
     this.display = () => {
         html= "";
 
-        for (let i =0; i < addressBook.list.length; i++) {
+        for (let i = 0; i < addressBook.list.length; i++) {
             html += `<ul class="contacts" id="contact${[i]}">
                         <li>Name: ${addressBook.list[i].name}</li>
                         <li>Email: ${addressBook.list[i].email}</li>
@@ -47,6 +47,9 @@ function AddressBook () {
         let index = (el.getAttribute("id").slice(1)); // gets id#
         el.parentNode.remove(); // removes ul from DOM
         addressBook.list.splice(index, 1); // removes ul from array
+
+         //testing this 12:28am
+         this.display();
     
     }
 }
