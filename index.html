@@ -6,27 +6,29 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Lab2Part2</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Maven+Pro" rel="stylesheet">
 </head>
 <body>
+    <div id="overlay">
+        <div id="container">
+            <form action="" method="">
+                <h1>My Contacts</h1>
+                <input type="text" placeholder="Name" id="name" maxlength="25" required/>
+                <input type="email" placeholder="Email" id="email" maxlength="33"/>
+                <input type="text" placeholder="Phone" id="phone" maxlength="12" />
+                <select id="select" >
+                    <option  value="" selected disabled>Relation</option>
+                    <option value="family">Family</option>
+                    <option value="friend">Friend</option>
+                    <option value="foe">Foe</option>
+                </select>
+                <button type="button"  onclick=" addressBook.add()">Add</button>
+            </form>
+        </div>
 
-    <div id="container">
-        <form action="" method="">
-            <h1>My Contacts</h1>
-            <input type="text" placeholder="Name" id="name" maxlength="25" required/>
-            <input type="email" placeholder="Email" id="email" maxlength="33"/>
-            <input type="text" placeholder="Phone" id="phone" maxlength="12" />
-            <select id="select" >
-                <option  value="" selected disabled>Relation</option>
-                <option value="family">Family</option>
-                <option value="friend">Friend</option>
-                <option value="foe">Foe</option>
-            </select>
-            <button type="button"  onclick=" addressBook.add()">Add</button>
-        </form>
-    </div>
-
-    <div id="contacts">
-        
+        <div id="contacts">
+            
+        </div>
     </div>
     
 
