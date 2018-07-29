@@ -41,8 +41,15 @@ function AddressBook () {
         this.list.push(new Contact(name, email, phone, select));
 
         this.display();
+
+        //clears the form
+        document.querySelector("#name").value = "";
+        document.querySelector("#email").value = "";
+        document.querySelector("#phone").value = "";
+        document.querySelector("#select").value = "";
         
     }
+
     this.deleteAt = function (el) {
         let index = (el.getAttribute("id").slice(1)); // gets id#
         el.parentNode.remove(); // removes ul from DOM
@@ -51,6 +58,18 @@ function AddressBook () {
          //testing this 12:28am
          this.display();
     
+    }
+
+    this.edit = function (el) {
+        let index = (el.getAttribute("id").slice(1)); // gets contact index number
+        document.querySelector("#name").value = addressBook.list[index].name; // puts contact info back in form to edit
+        document.querySelector("#email").value = addressBook.list[index].email;
+        document.querySelector("#phone").value = addressBook.list[index].phone;
+        document.querySelector("#select").value = addressBook.list[index].relation;
+
+        this.deleteAt(el); // deletes the contact from DOM and array
+        
+        window.scrollTo(0,0); // scrolls to the form to edit and save info
     }
 }
 
